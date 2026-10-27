@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Clicker Game
+        </title>
+        <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0amyecCXsOYewgzo7dZkNXWa-kKiDJi7gOe3ZFKEOmKnteutbj1IOp5hV&s=10">
+        <style>
+        body{
+            text-align: center;
+            background-color:blanchedalmond;
+            color: coral;
+        }
+        button{
+            background-color:blanchedalmond;
+             color: coral;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Clicker Game Thing!</h1>
+        <p id="score">Score: 0</p>
+        <img id="cheese" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0amyecCXsOYewgzo7dZkNXWa-kKiDJi7gOe3ZFKEOmKnteutbj1IOp5hV&s=10" alt="cheese" width="256" height="256">
+        <br>
+        <button id="upgrade1">2x Click Power</button>
+        <button id="upgrade2">4x Click Power</button>
+    </body>
+    </html>
+    <script>
+        let score=0
+        let upgrade1=false
+        let clickPower=1
+        let upgrade2=false
+        score=score+1
+        document.getElementById("score").innerText=score
+        document.getElementById("cheese").addEventListener("click",addScore)
+        document.getElementById("upgrade1").addEventListener("click",upgradeScore1)
+        document.getElementById("upgrade2").addEventListener("click",upgradeScore2)
+        function addScore(){
+            score=score+clickPower
+            document.getElementById("score").innerText=score
+        }
+        function upgradeScore1(){ //2x click power
+                if(score>=50){
+                upgrade1=true
+                clickPower=clickPower*2
+                score=score-50
+                document.getElementById("score").innerText=score
+                }
+        }
+        function upgradeScore2(){//4x click power
+            if(score>=128){
+                upgrade2=true
+                clickPower=clickPower*4
+                score=score-128
+                document.getElementById("score").innerText=score
+
+            }
+        }
+    </script>

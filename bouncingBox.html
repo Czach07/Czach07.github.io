@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Bouncing Box
+        </title>
+        <style>
+            img{
+                height: 50px;
+                width: 50px;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="box" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUZhcM0qZSmftqCm0YkR1qwuIBuVhQVNT1TY2rL13JnA&s=10" alt="DVD logo">
+    </body>
+</html>
+<script>
+    let x=50
+    let y=50
+    let dirctionUp=1
+    let dirctionLeft=1
+    setInterval(moveBox, 16)
+    document.getElementById("box").style.top = y
+    document.getElementById("box").style.left = x
+    function moveBox(){//Change the y varible of the box by 1
+        y=y+dirctionUp
+        document.getElementById("box").style.top = y + "px"
+        x=x+dirctionLeft
+        document.getElementById("box").style.left = x + "px"
+        //Change the direction
+        if(y<0){
+            dirctionUp=1
+        }
+            if(x<0){
+                dirctionLeft=1
+            }
+        if(x>1325){
+            dirctionLeft=-1
+        }
+        if(y>555){
+            dirctionUp=-1
+        }
+    }
+</script>
